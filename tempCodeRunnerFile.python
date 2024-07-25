@@ -1,0 +1,17 @@
+def countIdenticalPairs(nums):
+    count_map = {}
+
+    pairs = 0
+
+    for num in nums:
+        if num in count_map:
+            pairs += count_map[num]
+            count_map[num] += 1
+        else:
+            count_map[num] = 1
+        
+    return pairs
+
+
+nums = [1, 1, 1, 1]
+print(countIdenticalPairs(nums))
